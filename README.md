@@ -82,34 +82,6 @@ CMD [ "main.py" ]
 ```buildoutcfg
 pip freeze>requirements.txt
 ```
-## initialize git repo
-```
-git init
-git add .
-git commit -m "first commit"
-git branch -M main
-git remote add origin <github_url>
-git push -u origin main
-```
-
-##Create a new Project in GCP
-
-#### Capture GOOGLE_PROJECT_ID
-#### Create a Service account for this project and generate the key in .jason format
-#### Convert the key into base64
-
-## Create an account at CircleCI and setup the project using this repo from github
-
-<a href="https://circleci.com/login/">Circle CI</a>
-
-
-## Select project setting in CircleCI and add below environment variable
-
-```
-GOOGLE_PROJECT_ID: The Project ID for your Google Cloud project. This value can be retrieved from the project card in the Google Cloud Dashboard.
-GCP_PROJECT_KEY: The base64 encoded result from the previous section.
-GOOGLE_COMPUTE_ZONE: The value of the region to target your deployment.
-```
 
 ## In our Code Directory --> create a file ".circleci\config.yml" with following content
 ```
@@ -192,11 +164,43 @@ workflows:
               only:
                 - main
 ```
+
+
+## initialize git repo
+```
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin <github_url>
+git push -u origin main
+```
+
+##Create a new Project in GCP
+
+#### Capture GOOGLE_PROJECT_ID
+#### Create a Service account for this project and generate the key in .jason format
+#### Convert the key into base64
+
+## Create an account at CircleCI and setup the project using this repo from github
+
+<a href="https://circleci.com/login/">Circle CI</a>
+
+
+## Select project setting in CircleCI and add below environment variable
+
+```
+GOOGLE_PROJECT_ID: The Project ID for your Google Cloud project. This value can be retrieved from the project card in the Google Cloud Dashboard.
+GCP_PROJECT_KEY: The base64 encoded result from the previous section.
+GOOGLE_COMPUTE_ZONE: The value of the region to target your deployment.
+```
+
+
 ## To update the modification from local to github repo
 
 ```
 git add .
-git commit -m "added config.yaml file"
+git commit -m "message"
 git push -u origin main
 ```
 
