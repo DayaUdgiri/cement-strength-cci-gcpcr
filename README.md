@@ -77,8 +77,6 @@ ENTRYPOINT [ "python" ]
 CMD [ "main.py" ]
 ```
 
-
-```
 ## to create requirements.txt
 
 ```buildoutcfg
@@ -95,6 +93,7 @@ git push -u origin main
 ```
 
 ##Create a new Project in GCP
+
 #### Capture GOOGLE_PROJECT_ID
 #### Create a Service account for this project and generate the key in .jason format
 #### Convert the key into base64
